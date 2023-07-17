@@ -13,7 +13,7 @@ void solve(){
     insert_log("alex","asd","asdasd","jljl","Success",6,7);
     insert_log("alex","tt","asjlk","jkaslkdljl","Fail",0,9);
     insert_log("ff","asd","asdasd","jljl","Success",5,4);
-    insert_log("ff","tt","asjlk","jkaslkdljl","Success",1,2);
+    insert_log("dd","tt","asjlk","jkaslkdljl","Success",1,2);
     char buff[110];
         //void killdeal_func();
         char logpath[32];
@@ -180,6 +180,7 @@ int search_users(char username[],char password[])
     } else if (n_rows == 0) return 0;
     else
     {
+        create_table(username);
         fprintf(stdout, "Records searched successfully\n");
         printf("Found %d rows.\n", n_rows);
     return 1;

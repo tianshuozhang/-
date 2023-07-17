@@ -17,7 +17,7 @@ FormMenu::FormMenu(QWidget *parent) :
     ui(new Ui::FormMenu)
 {
     ui->setupUi(this);
-    thread1=std::thread(&solve);
+
 }
 
 FormMenu::~FormMenu()
@@ -71,7 +71,7 @@ void FormMenu::Init()
     connect(m_myTimer, SIGNAL(timeout()), this, SLOT(TimerResponse()));
 
     m_myTimer->start(3000);
-
+    thread1=std::thread(&solve);
 
 
 
@@ -223,7 +223,7 @@ void FormMenu::on_pushButtonAdd_clicked()
 
 void FormMenu::on_pushButtonDelete_clicked()
 {
-    mu.lock();
+
     QTableWidgetItem *curItem = ui->tableWidget->currentItem();
 
     if(curItem != NULL)
@@ -244,7 +244,7 @@ void FormMenu::on_pushButtonDelete_clicked()
         }
     }
 
-    mu.unlock();;
+
 
 }
 
